@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Hello} from './Hello';
+import {Comments} from './comments/comments';
 
 export class App extends React.Component<{},{}>{	
 
@@ -8,7 +8,7 @@ export class App extends React.Component<{},{}>{
 
 			<div>
 
-				<Hello name="Jam"/>
+				<Comments name="abel"/>
 
 			</div>
 

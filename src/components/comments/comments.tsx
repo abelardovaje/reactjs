@@ -5,7 +5,11 @@ export interface CommentProps{
 	image?:string;
 }
 
-export class Components extends React.Component<CommentProps,{}>{
+export class Comments extends React.Component<CommentProps,{}>{
+
+	componentDidMount(){
+		
+	}
 
 	template(){
 		return (
@@ -15,7 +19,7 @@ export class Components extends React.Component<CommentProps,{}>{
 					<div className="avatar">
 						<img src=".jpg"/>
 					</div>
-					<div className="user-name">Abel</div>
+					<div className="user-name">{this.props.name}</div>
 				</div>
 
 			</div>

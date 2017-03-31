@@ -14,12 +14,6 @@ export class Hello extends React.Component<HelloProps,{}>{
 		super();
 	}
 
-	formatName(){
-
-		return 'Abel';
-	}
-
-
 	template(){
 		return(
 

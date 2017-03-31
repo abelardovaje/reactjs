@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -90,25 +90,19 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the 'undefined' type.
-var Hello = (function (_super) {
-    __extends(Hello, _super);
-    function Hello() {
-        return _super.call(this) || this;
+var comments_1 = __webpack_require__(5);
+var App = (function (_super) {
+    __extends(App, _super);
+    function App() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Hello.prototype.formatName = function () {
-        return 'Abel';
+    App.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement(comments_1.Comments, { name: "abel" })));
     };
-    Hello.prototype.template = function () {
-        return (React.createElement("div", { className: "sample" }, this.props.name));
-    };
-    Hello.prototype.render = function () {
-        return this.template();
-    };
-    return Hello;
+    return App;
 }(React.Component));
-exports.Hello = Hello;
+exports.App = App;
 
 
 /***/ }),
@@ -118,7 +112,8 @@ exports.Hello = Hello;
 module.exports = ReactDOM;
 
 /***/ }),
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -126,12 +121,12 @@ module.exports = ReactDOM;
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
 var ReactDOM = __webpack_require__(2);
-var App_1 = __webpack_require__(4);
+var App_1 = __webpack_require__(1);
 ReactDOM.render(React.createElement(App_1.App, null), document.getElementById("root"));
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -148,19 +143,26 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
-var Hello_1 = __webpack_require__(1);
-var App = (function (_super) {
-    __extends(App, _super);
-    function App() {
+var Comments = (function (_super) {
+    __extends(Comments, _super);
+    function Comments() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement(Hello_1.Hello, { name: "Jam" })));
+    Comments.prototype.componentDidMount = function () {
     };
-    return App;
+    Comments.prototype.template = function () {
+        return (React.createElement("div", { className: "comments" },
+            React.createElement("div", { className: "userInfo" },
+                React.createElement("div", { className: "avatar" },
+                    React.createElement("img", { src: ".jpg" })),
+                React.createElement("div", { className: "user-name" }, this.props.name))));
+    };
+    Comments.prototype.render = function () {
+        return this.template();
+    };
+    return Comments;
 }(React.Component));
-exports.App = App;
+exports.Comments = Comments;
 
 
 /***/ })
