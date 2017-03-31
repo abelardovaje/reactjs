@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -112,17 +112,69 @@ exports.App = App;
 module.exports = ReactDOM;
 
 /***/ }),
-/* 3 */,
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var Avatar = (function (_super) {
+    __extends(Avatar, _super);
+    function Avatar() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Avatar.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement("div", { className: "avatar" },
+                React.createElement("img", { src: this.props.image }))));
+    };
+    return Avatar;
+}(React.Component));
+exports.Avatar = Avatar;
+
+
+/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
-var ReactDOM = __webpack_require__(2);
-var App_1 = __webpack_require__(1);
-ReactDOM.render(React.createElement(App_1.App, null), document.getElementById("root"));
+var Avatar_1 = __webpack_require__(3);
+var UserDetails = (function (_super) {
+    __extends(UserDetails, _super);
+    function UserDetails() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    UserDetails.prototype.render = function () {
+        return (React.createElement("div", { className: "userInfo" },
+            React.createElement(Avatar_1.Avatar, { image: ".jpg" })));
+    };
+    return UserDetails;
+}(React.Component));
+exports.UserDetails = UserDetails;
 
 
 /***/ }),
@@ -143,6 +195,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
+var UserDetails_1 = __webpack_require__(4);
 var Comments = (function (_super) {
     __extends(Comments, _super);
     function Comments() {
@@ -152,10 +205,7 @@ var Comments = (function (_super) {
     };
     Comments.prototype.template = function () {
         return (React.createElement("div", { className: "comments" },
-            React.createElement("div", { className: "userInfo" },
-                React.createElement("div", { className: "avatar" },
-                    React.createElement("img", { src: ".jpg" })),
-                React.createElement("div", { className: "user-name" }, this.props.name))));
+            React.createElement(UserDetails_1.UserDetails, null)));
     };
     Comments.prototype.render = function () {
         return this.template();
@@ -163,6 +213,19 @@ var Comments = (function (_super) {
     return Comments;
 }(React.Component));
 exports.Comments = Comments;
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var ReactDOM = __webpack_require__(2);
+var App_1 = __webpack_require__(1);
+ReactDOM.render(React.createElement(App_1.App, null), document.getElementById("root"));
 
 
 /***/ })
